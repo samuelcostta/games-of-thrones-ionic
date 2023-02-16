@@ -15,7 +15,10 @@
       {{item.family}}
       {{item.firstName}}
       {{item.lastName}}
-      <ion-img src="{{item.imageUrl}}"></ion-img>
+      <ion-thumbnail slot="start">
+        <img alt="{{item.family}} - {{item.fullName}}"
+         src="{{item.imageUrl}}" />
+      </ion-thumbnail>
       {{item.title}}
     </ion-item>
   </ion-list>

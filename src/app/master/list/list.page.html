@@ -10,17 +10,36 @@
     <ion-list-header>
       <ion-label>{{item.fullName}}</ion-label>
     </ion-list-header>
-    <ion-item>
-      {{item.id}}
-      {{item.family}}
-      {{item.firstName}}
-      {{item.lastName}}
-      <ion-thumbnail slot="start">
-        <img alt="{{item.family}} - {{item.fullName}}"
-         src="{{item.imageUrl}}" />
-      </ion-thumbnail>
-      {{item.title}}
-    </ion-item>
+
+    <ion-item-sliding>
+      <ion-item-options side="start">
+        <ion-item-option color="success">
+          <ion-icon slot="icon-only" name="archive"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+
+      <ion-item>
+        {{item.id}}
+        {{item.family}}
+        {{item.firstName}}
+        {{item.lastName}}
+        <ion-thumbnail slot="start">
+          <img alt="{{item.family}} - {{item.fullName}}" 
+          src="{{item.imageUrl}}" />
+        </ion-thumbnail>
+        {{item.title}}
+      </ion-item>
+
+      <ion-item-options side="end">
+        <ion-item-option>
+          <ion-icon slot="icon-only" name="heart"></ion-icon>
+        </ion-item-option>
+        <ion-item-option color="danger">
+          <ion-icon slot="icon-only" name="trash"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+
+    </ion-item-sliding>
   </ion-list>
 
   <!--ul *ngFor="let item of characteres">
